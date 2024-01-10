@@ -70,7 +70,13 @@ function(input) {
 }
 ```
 
+## Equation Highlighting
 
+
+* $y$ $=$ $a$ $+$ $\beta x$
+* <hl>$y$</hl> $=$ $a$ $+$ $\beta x$
+* $y$ $=$ <hl>$a$</hl> $+$ $\beta x$
+* $y$ $=$ $a$ $+$ <hl>$\beta x$</hl>
 
 # Errors - Help!
 
