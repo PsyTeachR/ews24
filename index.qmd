@@ -127,6 +127,8 @@ function(input) {
 
 # Thank You!
 
+[psyteachr.github.io/ews24](https://psyteachr.github.io/ews24/)
+
 ::: {.people layout-ncol=3}
 ![[Sean Westwood](https://mphiliastides.org/en/team/sean-westwood)](images/sean.jpg)
 
@@ -134,3 +136,4 @@ function(input) {
 
 ![[Lisa DeBruine](https://debruine.github.io/)](images/lisa.jpg)
 :::
+
