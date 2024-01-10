@@ -1,0 +1,136 @@
+---
+title: "PsyTeachR<br><smaller>Teaching case studies from Glasgow</smaller>"
+subtitle: "[psyteachr.github.io/ews24](https://psyteachr.github.io/ews24/)"
+author: "Sean Westwood, Tobias Thejll-Madsen & Lisa DeBruine"
+format: 
+  revealjs:
+    logo: images/hex/psyteachr.png
+    theme: [dark, style.scss]
+    transition: none
+    transition-speed: fast
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(error = TRUE,
+                      echo = TRUE,
+                      message = FALSE,
+                      eval = FALSE)
+
+# remember to set eval = FALSE on code chunks that I don't want code to run
+# this may make more sense than error depending if we want error message
+```
+
+# Overview
+
+::: {.people layout-ncol=3}
+![Demystifying Functions](images/sean.jpg)
+
+![Errors<br>Help!](images/tobi.jpg)
+
+![PsyTeachR Resources](images/lisa.jpg)
+:::
+
+# Demystifying Functions
+
+## Example: SEM
+
+-   what mysteries stand in the way?
+    -   scary equations
+    -   functions as black boxes
+
+
+## The `function()` Function {auto-animate=true}
+
+- **Input**: We use the `function()` function to specify our inputs
+
+```{r}
+function(input)
+```
+
+
+## The `function()` Function {auto-animate=true}
+
+- **Process**: We specify what the function does with the input inside the curly brackets
+
+```{r}
+function(input) {
+  # the process
+}
+```
+
+
+## The `function()` Function {auto-animate=true}
+
+- **Output**: We specify what the function gives us back using the `return()` function
+
+```{r}
+function(input) {
+  # the process
+  return(output)
+}
+```
+
+
+
+# Errors - Help!
+
+# PsyTeachR
+
+![](images/psyteachr_logo.png)
+
+## Resources
+
+![[psyteachr.github.io](https://psyteachr.github.io/)](images/resources.png)
+
+## Undergraduate Textbooks
+
+::: {layout-ncol=3}
+![[Level 1](https://psyteachr.github.io/data-skills/)](images/hex/data-skills.png)
+
+![[Level 2](https://psyteachr.github.io/analysis/)](images/hex/analysis.png)
+
+![[Level 3](https://psyteachr.github.io/stat-models/)](images/hex/stat-models.png)
+:::
+
+## Postgraduate/CPD Textbooks
+
+::: {layout-ncol=3}
+![[Conversion](https://psyteachr.github.io/quant-fun/)](images/hex/quant-fun.png)
+
+![[MSc](https://psyteachr.github.io/reprores/)](images/hex/reprores.png)
+
+![[Micro-credential](https://psyteachr.github.io/ads/)](images/hex/ads.png)
+:::
+
+## Workshops
+
+::: {layout-ncol=3}
+![[IntroDataViz](https://psyteachr.github.io/introdataviz/)](images/hex/introdataviz.png)
+
+![[ShinyIntro](https://debruine.github.io/shinyintro/)](images/hex/shinyintro.png)
+
+![[Intro to R Packages](https://psyteachr.github.io/intro-r-pkgs/)](images/hex/intro-r-pkgs.png)
+:::
+
+## R Packages
+
+::: {layout-ncol=4}
+![[<smaller>webexercises</smaller>](https://psyteachr.github.io/webexercises/)](images/hex/webexercises.png)
+
+![[faux](https://debruine.github.io/faux/)](images/hex/faux.png)
+
+![[markr](https://psyteachr.github.io/markr/)](images/hex/markr.png)
+
+![[glossary](https://debruine.github.io/glossary/)](images/hex/glossary-pkg.png)
+:::
+
+
+# Thank You!
+
+::: {.people layout-ncol=3}
+![[Sean Westwood](https://mphiliastides.org/en/team/sean-westwood)](images/sean.jpg)
+
+![[Tobias Thejll-Madsen](https://www.gla.ac.uk/pgrs/tobiasthejll-madsen/)](images/tobi.jpg)
+
+![[Lisa DeBruine](https://debruine.github.io/)](images/lisa.jpg)
+:::
