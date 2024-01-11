@@ -1056,11 +1056,15 @@ mean_function(test_chr)
 
 ![](images/psyteachr_logo.png)
 
-## Embedding Data Skills in Research Methods Education: Preparing Students for Reproducible Research
+## Embedding Data Skills in Research Methods Education:
 
-Phil McAleer, Niamh Stack, Heather Cleland Woods, Lisa DeBruine, Helena Paterson, Emily Nordmann, Carolina Kuepper-Tetzel, Dale Barr
+### Preparing Students for Reproducible Research
+
+<smaller>Phil McAleer, Niamh Stack, Heather Cleland Woods, Lisa DeBruine, Helena Paterson, Emily Nordmann, Carolina Kuepper-Tetzel, Dale Barr</smaller>
 
 [10.31234/osf.io/hq68s](https://doi.org/10.31234/osf.io/hq68s)
+
+> When starting from realistic raw data, nearly 80% of the data analytic effort for this task involves skills not commonly taught—namely, importing, manipulating, and transforming tabular data.
 
 ## Resources
 

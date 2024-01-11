@@ -678,8 +678,8 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  2.1320471  1.4507008  0.7195198 -0.9554218  0.9512861  0.5087931
- [7]  1.0677031  0.6907823 -1.2209821 -0.8583359</code></pre>
+<pre><code> [1]  0.11148599  0.09301212 -1.31551523 -1.58759382 -1.26621010 -0.41885440
+ [7]  1.59791447  0.62133804 -0.20493488  0.96448323</code></pre>
 </div>
 </div>
 </div>
@@ -697,7 +697,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4486092</code></pre>
+<pre><code>[1] -0.1404875</code></pre>
 </div>
 </div>
 </div>
@@ -706,7 +706,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4486092</code></pre>
+<pre><code>[1] -0.1404875</code></pre>
 </div>
 </div>
 </div>
@@ -972,7 +972,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.230746</code></pre>
+<pre><code>[1] 1.08501</code></pre>
 </div>
 </div>
 </div>
@@ -981,7 +981,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.230746</code></pre>
+<pre><code>[1] 1.08501</code></pre>
 </div>
 </div>
 </div>
@@ -1206,8 +1206,8 @@ SE = \color{red}{\frac
 <pre><code># A tibble: 2 × 2
   Group ReactionT
   &lt;chr&gt;     &lt;dbl&gt;
-1 G1         650.
-2 G1         404.</code></pre>
+1 G1         245.
+2 G1         564.</code></pre>
 </div>
 </div>
 </section>
@@ -1300,13 +1300,13 @@ SE = \color{red}{\frac
     Welch Two Sample t-test
 
 data:  ReactionT by Group
-t = 0.024675, df = 17.042, p-value = 0.9806
+t = 0.78859, df = 17.395, p-value = 0.441
 alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
 95 percent confidence interval:
- -98.86345 101.20371
+ -77.8362 171.0075
 sample estimates:
 mean in group G1 mean in group G2 
-        477.7201         476.5499 </code></pre>
+        554.0498         507.4641 </code></pre>
 </div>
 </div>
 </section>
@@ -1526,10 +1526,14 @@ mean in group G1 mean in group G2
 <h1>PsyTeachR</h1>
 
 <img data-src="images/psyteachr_logo.png" class="r-stretch"></section>
-<section id="embedding-data-skills-in-research-methods-education-preparing-students-for-reproducible-research" class="slide level2">
-<h2>Embedding Data Skills in Research Methods Education: Preparing Students for Reproducible Research</h2>
-<p>Phil McAleer, Niamh Stack, Heather Cleland Woods, Lisa DeBruine, Helena Paterson, Emily Nordmann, Carolina Kuepper-Tetzel, Dale Barr</p>
+<section id="embedding-data-skills-in-research-methods-education" class="slide level2">
+<h2>Embedding Data Skills in Research Methods Education:</h2>
+<h3 id="preparing-students-for-reproducible-research">Preparing Students for Reproducible Research</h3>
+<p><smaller>Phil McAleer, Niamh Stack, Heather Cleland Woods, Lisa DeBruine, Helena Paterson, Emily Nordmann, Carolina Kuepper-Tetzel, Dale Barr</smaller></p>
 <p><a href="https://doi.org/10.31234/osf.io/hq68s">10.31234/osf.io/hq68s</a></p>
+<blockquote>
+<p>When starting from realistic raw data, nearly 80% of the data analytic effort for this task involves skills not commonly taught—namely, importing, manipulating, and transforming tabular data.</p>
+</blockquote>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
