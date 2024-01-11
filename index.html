@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine">
   <title>PsyTeachR Teaching case studies from Glasgow</title>
@@ -439,62 +439,1081 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <h1>Demystifying Functions</h1>
 
 </section>
-<section id="example-sem" class="slide level2">
-<h2>Example: SEM</h2>
+<section id="why-demystification" class="slide level2">
+<h2>Why Demystification?</h2>
+<div>
 <ul>
-<li>what mysteries stand in the way?
-<ul>
-<li>scary equations</li>
-<li>functions as black boxes</li>
-</ul></li>
+<li class="fragment">Programming as a beginner is mysterious and scary</li>
+<li class="fragment">Things almost seem to work by magic</li>
+<li class="fragment">How can we fix something magical when it breaks??</li>
 </ul>
+</div>
+<div class="fragment absolute" style="left: 250px; width: 500px; height: 300px; ">
+<p><img data-src="images/fantasia.jpg"></p>
+</div>
+</section>
+<section id="why-demystification-1" class="slide level2">
+<h2>Why Demystification?</h2>
+<div>
+<ul>
+<li class="fragment">Similar panic can be induced by stats formula</li>
+<li class="fragment">Mapping intuition onto an equation is not easy</li>
+<li class="fragment">What if we can find a common solution?</li>
+</ul>
+</div>
+<div class="fragment absolute" style="left: 250px; width: 700px; height: 400px; ">
+<p><img data-src="images/oneplusone.png"></p>
+</div>
+</section>
+<section id="the-goal" class="slide level2">
+<h2>The Goal</h2>
+<div>
+<ul>
+<li class="fragment">Crack open the black box of functions in coding</li>
+<li class="fragment">Systematically defang scary formulas</li>
+<li class="fragment">Instill a sense of confidence and independence</li>
+</ul>
+</div>
+<div class="fragment absolute" style="left: 250px; width: 500px; height: 300px; ">
+<p><img data-src="images/fantasia2.jpg"></p>
+</div>
 </section>
 <section id="the-function-function" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The <code>function()</code> Function</h2>
+<div class="fragment">
 <ul>
-<li><strong>Input</strong>: We use the <code>function()</code> function to specify our inputs</li>
+<li><strong>Input</strong>: We use the function function to specify our inputs</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="cf">function</span>(input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">function</span>(<span class="st">`</span><span class="at">input</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Process</strong>: We put the process inside the curly brackets <code>{}</code></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">function</span>(<span class="st">`</span><span class="at">input</span><span class="st">`</span>){</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co"># inside the curly brackets goes the process</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Output</strong>: We specify the output using <code>return()</code></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">function</span>(<span class="st">`</span><span class="at">input</span><span class="st">`</span>){</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="st">`</span><span class="at">process</span><span class="st">`</span> <span class="co"># inside the curly brackets goes the process</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">return</span>(<span class="st">`</span><span class="at">output</span><span class="st">`</span>) <span class="co"># the outcome of the process goes here</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
-<section id="the-function-function-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The <code>function()</code> Function</h2>
+<section id="step-1-i-make-a-mean-function" class="slide level2">
+<h2>Step 1: I Make a Mean Function</h2>
+<div>
 <ul>
-<li><strong>Process</strong>: We specify what the function does with the input inside the curly brackets</li>
+<li class="fragment">We need a non-intimidating example to ease into things</li>
+<li class="fragment">The mean is a simple &amp; familiar statistical concept</li>
+<li class="fragment">An ideal starting point for demystification!!</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="cf">function</span>(input) {</span>
-<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>  <span class="co"># the process</span></span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment absolute" style="right: 100px; width: 400px; height: 400px; ">
+<p><img data-src="images/mean.png"></p>
+</div>
+<div class="fragment absolute" style="left: 150px; bottom: 150px; ">
+<p><span class="math display">\[
+\bar{x} = \frac{\sum x}{n}
+\]</span></p>
 </div>
 </section>
-<section id="the-function-function-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The <code>function()</code> Function</h2>
-<ul>
-<li><strong>Output</strong>: We specify what the function gives us back using the <code>return()</code> function</li>
-</ul>
+<section id="mean-function-input" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Mean Function: Input</h2>
+<div class="fragment">
+<p>A vector of numeric values (<code>x</code>)</p>
+</div>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="cf">function</span>(input) {</span>
-<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>  <span class="co"># the process</span></span>
-<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  <span class="fu">return</span>(output)</span>
-<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>  </span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>  </span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>  </span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>  </span>
+<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>  </span>
+<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>  </span>
+<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\bar{x} = \frac
+{\sum \color{red}{x}}
+{n}
+\]</span></p>
 </div>
 </section>
-<section id="equation-highlighting" class="slide level2">
-<h2>Equation Highlighting</h2>
+<section id="mean-function-process" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Mean Function: Process</h2>
+<ol type="1">
+<li>Add up all the values within <code>x</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a>  </span>
+<span id="cb5-3" class="hljs-ln-code"><a href="#cb5-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a>  </span>
+<span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a>  </span>
+<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>  </span>
+<span id="cb5-7" class="hljs-ln-code"><a href="#cb5-7"></a>  </span>
+<span id="cb5-8" class="hljs-ln-code"><a href="#cb5-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\bar{x} = \frac
+{\color{red}{\sum x}}
+{n}
+\]</span></p>
+</div>
+</section>
+<section id="mean-function-process-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Mean Function: Process</h2>
+<ol type="1">
+<li>Add up all the values within <code>x</code></li>
+<li>Find the number of values within <code>x</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a>  </span>
+<span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a>  </span>
+<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>  </span>
+<span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a>  </span>
+<span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\bar{x} = \frac
+{\sum x}
+{\color{red}{n}}
+\]</span></p>
+</div>
+</section>
+<section id="mean-function-process-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Mean Function: Process</h2>
+<ol type="1">
+<li>Add up all the values within <code>x</code></li>
+<li>Find the number of values within <code>x</code></li>
+<li>Divide the sum of values by the number of values</li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a>  </span>
+<span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>  </span>
+<span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a>  </span>
+<span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\bar{x} = \color{red}{\frac
+{\sum x}
+{n}}
+\]</span></p>
+</div>
+</section>
+<section id="mean-function-output" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Mean Function: Output</h2>
+<p>Return the value contained in <code>output</code></p>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a>  </span>
+<span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>  </span>
+<span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\color{red}{\bar{x}} = \frac
+{\sum x}
+{n}
+\]</span></p>
+</div>
+</section>
+<section id="mean-function-testing" class="slide level2">
+<h2>Mean Function: Testing</h2>
+<p>Now that we have made our function, we can test it by comparing the output it gives us to the regular old <code>mean()</code> function in base R!</p>
+<div class="fragment absolute" style="bottom: 300px; ">
+<p>Let’s simulate some random values to test our function with:</p>
+</div>
+<div class="fragment absolute" style="bottom: 100px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1.3293398 -0.1874176 -0.9455704  0.8388746  2.1995362 -0.8723718
+ [7] -0.1723302 -0.4131464 -0.4850704  0.5219714</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="mean-function-testing-1" class="slide level2">
+<h2>Mean Function: Testing</h2>
+<div class="fragment">
+<p>Let’s see how our function compares to <code>mean()</code> in base R</p>
+</div>
+<div class="fragment">
+<p>We can use <code>test_data</code> as a test case:</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1813815</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1813815</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># return TRUE if the two  means are equivalent</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">mean_function</span>(test_data) <span class="sc">==</span> <span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment absolute" style="bottom: 25px; ">
+<p><strong>It wasn’t magic after all!!</strong></p>
+</div>
+</section>
+<section id="step-2-variance-is-the-spice-of-life" class="slide level2">
+<h2>Step 2: Variance is the Spice of Life</h2>
+<div>
 <ul>
-<li><span class="math inline">\(y\)</span> <span class="math inline">\(=\)</span> <span class="math inline">\(a\)</span> <span class="math inline">\(+\)</span> <span class="math inline">\(\beta x\)</span></li>
-<li><hl><span class="math inline">\(y\)</span></hl> <span class="math inline">\(=\)</span> <span class="math inline">\(a\)</span> <span class="math inline">\(+\)</span> <span class="math inline">\(\beta x\)</span></li>
-<li><span class="math inline">\(y\)</span> <span class="math inline">\(=\)</span> <hl><span class="math inline">\(a\)</span></hl> <span class="math inline">\(+\)</span> <span class="math inline">\(\beta x\)</span></li>
-<li><span class="math inline">\(y\)</span> <span class="math inline">\(=\)</span> <span class="math inline">\(a\)</span> <span class="math inline">\(+\)</span> <hl><span class="math inline">\(\beta x\)</span></hl></li>
+<li class="fragment">Now we have dipped our toe in, let’s up the complexity</li>
+<li class="fragment">Variance is a little trickier, but not totally alien</li>
+<li class="fragment">We can use our new mean function too!</li>
 </ul>
+</div>
+<div class="fragment absolute" style="right: 50px; width: 400px; height: 400px; ">
+<p><img data-src="images/var.png"></p>
+</div>
+<div class="fragment absolute" style="left: 150px; bottom: 150px; ">
+<p><span class="math display">\[\sigma^2 = \frac{\sum(x - \bar{x})^2}{n-1}\]</span></p>
+</div>
+</section>
+<section id="variance-function-input" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Input</h2>
+<div class="fragment">
+<p>A vector of numeric values (<code>x</code>)</p>
+</div>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  </span>
+<span id="cb17-3" class="hljs-ln-code"><a href="#cb17-3"></a>  </span>
+<span id="cb17-4" class="hljs-ln-code"><a href="#cb17-4"></a>  </span>
+<span id="cb17-5" class="hljs-ln-code"><a href="#cb17-5"></a>  </span>
+<span id="cb17-6" class="hljs-ln-code"><a href="#cb17-6"></a>  </span>
+<span id="cb17-7" class="hljs-ln-code"><a href="#cb17-7"></a>  </span>
+<span id="cb17-8" class="hljs-ln-code"><a href="#cb17-8"></a>  </span>
+<span id="cb17-9" class="hljs-ln-code"><a href="#cb17-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\sum(\color{red}{x} - \bar{x})^2}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol type="1">
+<li>Calculate the mean of <code>x</code> using our <code>mean_function()</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  </span>
+<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>  </span>
+<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>  </span>
+<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>  </span>
+<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>  </span>
+<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a>  </span>
+<span id="cb18-9" class="hljs-ln-code"><a href="#cb18-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\sum(x - \color{red}{\bar{x}})^2}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol start="2" type="1">
+<li><p>Calculate the top part (numerator) of the formula</p>
+<ol type="1">
+<li>subtract the mean from each value of x</li>
+</ol></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  </span>
+<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)</span>
+<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>  </span>
+<span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>  </span>
+<span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>  </span>
+<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a>  </span>
+<span id="cb19-9" class="hljs-ln-code"><a href="#cb19-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\sum(x \color{red}{-} \bar{x})^2}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol start="2" type="1">
+<li><p>Calculate the top part (numerator) of the formula</p>
+<ol type="1">
+<li>subtract the mean from each value of x</li>
+<li>square each of the resulting values</li>
+</ol></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  </span>
+<span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a>  </span>
+<span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>  </span>
+<span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>  </span>
+<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a>  </span>
+<span id="cb20-9" class="hljs-ln-code"><a href="#cb20-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\sum(x - \bar{x})^\color{red}{2}}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol start="2" type="1">
+<li><p>Calculate the top part (numerator) of the formula</p>
+<ol type="1">
+<li>subtract the mean from each value of x</li>
+<li>square each of the resulting values</li>
+<li>sum all of the squared values together</li>
+</ol></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a href="#cb21-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb21-2" class="hljs-ln-code"><a href="#cb21-2"></a>  </span>
+<span id="cb21-3" class="hljs-ln-code"><a href="#cb21-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb21-4" class="hljs-ln-code"><a href="#cb21-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb21-5" class="hljs-ln-code"><a href="#cb21-5"></a>  </span>
+<span id="cb21-6" class="hljs-ln-code"><a href="#cb21-6"></a>  </span>
+<span id="cb21-7" class="hljs-ln-code"><a href="#cb21-7"></a>  </span>
+<span id="cb21-8" class="hljs-ln-code"><a href="#cb21-8"></a>  </span>
+<span id="cb21-9" class="hljs-ln-code"><a href="#cb21-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\color{red}{\sum}(x - \bar{x})^2}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol start="3" type="1">
+<li>Calculate the bottom part (denominator) of the formula</li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  </span>
+<span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  </span>
+<span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>  </span>
+<span id="cb22-8" class="hljs-ln-code"><a href="#cb22-8"></a>  </span>
+<span id="cb22-9" class="hljs-ln-code"><a href="#cb22-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \frac
+{\sum(x - \bar{x})^2}
+{\color{red}{n-1}}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-process-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Process</h2>
+<ol start="3" type="1">
+<li>Calculate the bottom part (denominator) of the formula</li>
+<li>Divide the numerator by the denominator</li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  </span>
+<span id="cb23-3" class="hljs-ln-code"><a href="#cb23-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb23-5" class="hljs-ln-code"><a href="#cb23-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb23-6" class="hljs-ln-code"><a href="#cb23-6"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb23-7" class="hljs-ln-code"><a href="#cb23-7"></a></span>
+<span id="cb23-8" class="hljs-ln-code"><a href="#cb23-8"></a>  </span>
+<span id="cb23-9" class="hljs-ln-code"><a href="#cb23-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\sigma^2 = \color{red}{
+\frac
+{\sum (x - \bar{x})^2}
+{n-1}
+}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-output" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Variance Function: Output</h2>
+<p>Return the resulting value from Step 4 in the process</p>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  </span>
+<span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
+<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a>  </span>
+<span id="cb24-8" class="hljs-ln-code"><a href="#cb24-8"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb24-9" class="hljs-ln-code"><a href="#cb24-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\color{red}{\sigma^2} = \frac
+{\sum (x - \bar{x})^2}
+{n-1}
+\]</span></p>
+</div>
+</section>
+<section id="variance-function-testing" class="slide level2">
+<h2>Variance Function: Testing</h2>
+<div class="fragment">
+<p>Let’s use our <code>test_data</code> again to see if our function works:</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.042024</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.042024</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># return TRUE if the two variances are equivalent</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">var_function</span>(test_data) <span class="sc">==</span> <span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment absolute" style="bottom: 50px; ">
+<p><strong>The mystery is disappearing before our eyes!!</strong></p>
+</div>
+</section>
+<section id="step-3-making-a-standard-error-but-in-a-good-way" class="slide level2">
+<h2>Step 3: Making a Standard Error (but in a good way)</h2>
+<div>
+<ul>
+<li class="fragment">We are now ready to put it all together for our SEM function</li>
+<li class="fragment">This is a nice practical end goal as there no SEM in base R</li>
+<li class="fragment">A simple equation that neatly applies our <code>mean</code> and <code>var</code></li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+SE = \frac{s}{\sqrt{n}}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Where <span class="math inline">\(s\)</span> is the standard deviation of the sample (i.e.&nbsp;the square root of the variance)</p>
+</div>
+</section>
+<section id="sem-function-input" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">SEM Function: Input</h2>
+<div class="fragment">
+<p>A vector of numeric values (<code>x</code>)</p>
+</div>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb31-1" class="hljs-ln-code"><a href="#cb31-1"></a>sem_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb31-2" class="hljs-ln-code"><a href="#cb31-2"></a>  </span>
+<span id="cb31-3" class="hljs-ln-code"><a href="#cb31-3"></a>  </span>
+<span id="cb31-4" class="hljs-ln-code"><a href="#cb31-4"></a>  </span>
+<span id="cb31-5" class="hljs-ln-code"><a href="#cb31-5"></a>  </span>
+<span id="cb31-6" class="hljs-ln-code"><a href="#cb31-6"></a>  </span>
+<span id="cb31-7" class="hljs-ln-code"><a href="#cb31-7"></a>  </span>
+<span id="cb31-8" class="hljs-ln-code"><a href="#cb31-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+SE = \frac{s}{\sqrt{n}}
+\]</span></p>
+</div>
+</section>
+<section id="sem-function-process" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">SEM Function: Process</h2>
+<ol type="1">
+<li>For our numerator, calculate the standard deviation of <code>x</code> by taking the square root of our <code>var_function()</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a>sem_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb32-2" class="hljs-ln-code"><a href="#cb32-2"></a>  </span>
+<span id="cb32-3" class="hljs-ln-code"><a href="#cb32-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var_function</span>(x))</span>
+<span id="cb32-4" class="hljs-ln-code"><a href="#cb32-4"></a>  </span>
+<span id="cb32-5" class="hljs-ln-code"><a href="#cb32-5"></a>  </span>
+<span id="cb32-6" class="hljs-ln-code"><a href="#cb32-6"></a>  </span>
+<span id="cb32-7" class="hljs-ln-code"><a href="#cb32-7"></a>  </span>
+<span id="cb32-8" class="hljs-ln-code"><a href="#cb32-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+SE = \frac
+{\color{red}{s}}
+{\sqrt{n}}
+\]</span></p>
+</div>
+</section>
+<section id="sem-function-process-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">SEM Function: Process</h2>
+<ol type="1">
+<li>For our numerator, calculate the standard deviation of <code>x</code> by taking the square root of our <code>var_function()</code></li>
+<li>For our denominator, take the square root of the number of values in <code>x</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb33-1" class="hljs-ln-code"><a href="#cb33-1"></a>sem_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb33-2" class="hljs-ln-code"><a href="#cb33-2"></a>  </span>
+<span id="cb33-3" class="hljs-ln-code"><a href="#cb33-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var_function</span>(x))</span>
+<span id="cb33-4" class="hljs-ln-code"><a href="#cb33-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
+<span id="cb33-5" class="hljs-ln-code"><a href="#cb33-5"></a>  </span>
+<span id="cb33-6" class="hljs-ln-code"><a href="#cb33-6"></a>  </span>
+<span id="cb33-7" class="hljs-ln-code"><a href="#cb33-7"></a>  </span>
+<span id="cb33-8" class="hljs-ln-code"><a href="#cb33-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+SE = \frac
+{s}
+{\color{red}{\sqrt{n}}}
+\]</span></p>
+</div>
+</section>
+<section id="sem-function-process-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">SEM Function: Process</h2>
+<ol type="1">
+<li>For our numerator, calculate the standard deviation of <code>x</code> by taking the square root of our <code>var_function()</code></li>
+<li>For our denominator, take the square root of the number of values in <code>x</code></li>
+</ol>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a href="#cb34-1"></a>sem_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb34-2" class="hljs-ln-code"><a href="#cb34-2"></a>  </span>
+<span id="cb34-3" class="hljs-ln-code"><a href="#cb34-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var_function</span>(x))</span>
+<span id="cb34-4" class="hljs-ln-code"><a href="#cb34-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
+<span id="cb34-5" class="hljs-ln-code"><a href="#cb34-5"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb34-6" class="hljs-ln-code"><a href="#cb34-6"></a>  </span>
+<span id="cb34-7" class="hljs-ln-code"><a href="#cb34-7"></a>  </span>
+<span id="cb34-8" class="hljs-ln-code"><a href="#cb34-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+SE = \color{red}{\frac
+{s}
+{\sqrt{n}}
+}
+\]</span></p>
+</div>
+</section>
+<section id="sem-function-output" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">SEM Function: Output</h2>
+<p>Return the resulting value from this division</p>
+<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>sem_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  </span>
+<span id="cb35-3"><a href="#cb35-3"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var_function</span>(x))</span>
+<span id="cb35-4"><a href="#cb35-4"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
+<span id="cb35-5"><a href="#cb35-5"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
+<span id="cb35-6"><a href="#cb35-6"></a>  </span>
+<span id="cb35-7"><a href="#cb35-7"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb35-8"><a href="#cb35-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="absolute" style="bottom: 100px; right: 0px; ">
+<p><span class="math display">\[
+\color{red}{SE} = \frac
+{s}
+{\sqrt{n}}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>And of course you can start to simplify things e.g.&nbsp;</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>sem_function_mini <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(x))</span>
+<span id="cb36-3"><a href="#cb36-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="of-course-many-mysteries-remain" class="slide level2">
+<h2>Of course many mysteries remain…</h2>
+<div>
+<ul>
+<li class="fragment"><p>Demystification is a philosophy, not a lesson</p></li>
+<li class="fragment"><p>The core idea is <strong>emboldening</strong> and <strong>empowering</strong> learners</p></li>
+<li class="fragment"><p>Programming has a special capacity to overwhelm:</p>
+<ul>
+<li class="fragment">Software and package installation/dependencies</li>
+<li class="fragment">Project &amp; file management</li>
+<li class="fragment">Unintuitive logic &amp; conventions</li>
+<li class="fragment"><span class="math inline">\(\color{red}{\textbf{ERRORS}}\)</span></li>
+</ul></li>
+</ul>
+</div>
 </section></section>
+<section>
 <section id="errors---help" class="title-slide slide level1 center">
 <h1>Errors - Help!</h1>
 
 </section>
+<section id="a-familiar-scenario" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>You go to check-in on a student and see the following:</p>
+</section>
+<section id="a-familiar-scenario-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>You go to check-in on a student and see the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a><span class="co"># simulate data</span></span>
+<span id="cb37-2" class="hljs-ln-code"><a href="#cb37-2"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb37-3" class="hljs-ln-code"><a href="#cb37-3"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb37-4" class="hljs-ln-code"><a href="#cb37-4"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) </span>
+<span id="cb37-5" class="hljs-ln-code"><a href="#cb37-5"></a></span>
+<span id="cb37-6" class="hljs-ln-code"><a href="#cb37-6"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in tibble(Group = rep(c(“G1”, “G2”), each = 10), ReactionT = rnorm(20, : could not find function “tibble”</span></p>
+</section>
+<section id="a-familiar-scenario-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>We realise that they did not load ‘tidyverse’, so</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb38-2" class="hljs-ln-code"><a href="#cb38-2"></a></span>
+<span id="cb38-3" class="hljs-ln-code"><a href="#cb38-3"></a><span class="co"># simulate data</span></span>
+<span id="cb38-4" class="hljs-ln-code"><a href="#cb38-4"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb38-5" class="hljs-ln-code"><a href="#cb38-5"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb38-6" class="hljs-ln-code"><a href="#cb38-6"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) </span>
+<span id="cb38-7" class="hljs-ln-code"><a href="#cb38-7"></a></span>
+<span id="cb38-8" class="hljs-ln-code"><a href="#cb38-8"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  Group ReactionT
+  &lt;chr&gt;     &lt;dbl&gt;
+1 G1         338.
+2 G1         298.</code></pre>
+</div>
+</div>
+</section>
+<section id="programming-errors" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+</section>
+<section id="programming-errors-1" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+<ul>
+<li>Student programming errors comes two main types (Becker et al 2019):
+<ol type="1">
+<li>Language specification errors (comes with an error message)</li>
+<li>Program specification errors (program runs, but doesn’t do as intended)</li>
+</ol></li>
+</ul>
+</section>
+<section id="programming-errors-2" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+<ul>
+<li>Student programming errors comes two main types (Becker et al 2019):
+<ol type="1">
+<li><span style="color: red">Language specification errors</span> (comes with an error message)</li>
+<li>Program specification errors (program runs, but doesn’t do as intended)</li>
+</ol></li>
+<li>Both are important when debugging code, but an immediate hindrance is in <span style="color: red">language specification errors</span></li>
+</ul>
+</section>
+<section id="but-why-focus-on-errors" class="slide level2" data-auto-annimate="true">
+<h2>But why focus on errors?</h2>
+<div>
+<ul>
+<li class="fragment">Using errors in teaching has some evidence that is increase student programming ability and self-efficacy (Hoffman &amp; Elmi, 2021; Keohler, 2020)</li>
+<li class="fragment">Effectively debugging code can allow students to progress independently</li>
+<li class="fragment">An excellent framing device for fostering students as self-regulated learners (for self-regulated learning, see e.g., Zimmerman, 2002)</li>
+</ul>
+</div>
+</section>
+<section id="errors-for-non-programmers" class="slide level2" data-auto-annimate="true">
+<h2>Errors for non-programmers</h2>
+<div>
+<ul>
+<li class="fragment"><p>Students are used to high-stakes assessments (not used to ‘move fast and break things’-mentality)</p></li>
+<li class="fragment"><p><span style="color: red">Red is scary!</span></p></li>
+<li class="fragment"><p>Language is often convoluted and technical</p></li>
+<li class="fragment"><p>We need to actively help create the right relationship with errors</p></li>
+</ul>
+</div>
+</section>
+<section id="goal" class="slide level2" data-auto-annimate="true">
+<h2>Goal</h2>
+<div>
+<ul>
+<li class="fragment">First time students engage with errors it should be taught and not by chance</li>
+<li class="fragment">We want the first thought when seeing an error to be:
+<ul>
+<li class="fragment">“Great, that’s information about how I can do this cool thing”</li>
+<li class="fragment">“Oh no, I’ve done something wrong - maybe coding is not for me”</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="how-can-we-meaningfully-use-errors" class="slide level2" data-auto-annimate="true">
+<h2>How can we meaningfully use errors?</h2>
+<div>
+<ul>
+<li class="fragment">Make errors an explicit part of your teaching and not something that just happens
+<ul>
+<li class="fragment">Introduce errors just like you introduce a function</li>
+<li class="fragment">Error-full live coding</li>
+<li class="fragment">Fix errors to get code to run</li>
+<li class="fragment">“My favourite error”</li>
+<li class="fragment">Write functions with error handling</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function-1" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+<ul>
+<li>So just as with introducing functions and it’s output</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> ReactionT <span class="sc">~</span> Group, </span>
+<span id="cb40-2"><a href="#cb40-2"></a>       <span class="at">data =</span> d, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
 
+data:  ReactionT by Group
+t = -1.7074, df = 14.324, p-value = 0.1093
+alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
+95 percent confidence interval:
+ -240.36909   27.03854
+sample estimates:
+mean in group G1 mean in group G2 
+        444.5159         551.1812 </code></pre>
+</div>
+</div>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function-2" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+<ul>
+<li>We also want to spend time on</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> Group <span class="sc">~</span> ReactionT, </span>
+<span id="cb42-2"><a href="#cb42-2"></a>       <span class="at">data =</span> d, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in t.test.formula(formula = Group ~ ReactionT, data = d, paired = FALSE) : grouping factor must have exactly 2 levels</span></p>
+</section>
+<section id="error-full-live-coding" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<div>
+<ul>
+<li class="fragment">Pre-plan helpful errors for live coding</li>
+<li class="fragment">For instance:
+<ul>
+<li class="fragment">syntax/spelling errors you can easily fix</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="error-full-live-coding-1" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li>Pre-plan helpful errors for live coding</li>
+<li>For instance:
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+</ul></li>
+</ul>
+<div style="position: fixed; bottom: 1em">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">librarry</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in librarry(tidyverse) : could not find function “librarry”</span></p>
+</div>
+</section>
+<section id="error-full-live-coding-2" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li>Pre-plan helpful errors for live coding</li>
+<li>For instance:
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+<li>error that requires you to look at the <code>?help</code> (documentation)</li>
+</ul></li>
+</ul>
+<div style="position: fixed; bottom: 1em">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">rnorm</span>(<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in rnorm(mean = 0, sd = 1) : argument “n” missing, with no default</span></p>
+</div>
+</section>
+<section id="error-full-live-coding-3" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li><p>Pre-plan helpful errors for live coding</p></li>
+<li><p>For instance:</p>
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+<li>error that requires you to look at the <code>?help</code> (documentation)</li>
+<li>error that requires you to google (exact answer)</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">error that requires you to google (adaption required)</li>
+</ul>
+</div></li>
+</ul>
+</section>
+<section id="fix-errors-to-get-code-to-run" class="slide level2" data-auto-annimate="true">
+<h2>Fix errors to get code to run</h2>
+<ul>
+<li>Write code with error and have student fix them:</li>
+</ul>
+</section>
+<section id="fix-errors-to-get-code-to-run-1" class="slide level2" data-auto-annimate="true">
+<h2>Fix errors to get code to run</h2>
+<ul>
+<li>Write code with error and have student fix them:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb45-2"><a href="#cb45-2"></a></span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># simulate data</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) %<span class="sc">&gt;</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">mutate</span>(<span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">as.factor</span>(Group))</span>
+<span id="cb45-8"><a href="#cb45-8"></a>  </span>
+<span id="cb45-9"><a href="#cb45-9"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error: unexpected input in: ” “Group” = rep(c(“G1”, “G2”), each = 10), “ReactionT” = rnorm(20, 500, 150)) %&gt;”</span></p>
+</section>
+<section id="my-favourite-error" class="slide level2" data-auto-annimate="true">
+<h2>“My favourite error”</h2>
+<div>
+<ul>
+<li class="fragment"><p>But we can only think of so many errors…</p></li>
+<li class="fragment"><p>… so get help from your students!</p></li>
+<li class="fragment"><p><strong><em>“My favourite error”</em></strong>-activity:</p>
+<ul>
+<li class="fragment">students submit errors they come across during their coding</li>
+<li class="fragment">you review before class</li>
+<li class="fragment">choose a particularly interesting error and go through it in class</li>
+</ul></li>
+<li class="fragment"><p>This can help form foundation for a <strong>community error library</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="write-functions-with-error-handling" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Error messages help us think about how programming works, and what function calls do</li>
+</ul>
+</section>
+<section id="write-functions-with-error-handling-1" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Error messages help us think about how programming works, and what function calls do</li>
+</ul>
+<p>So when trying the off-the-shelf <code>mean()</code>-function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="st">"hello"</span>)</span>
+<span id="cb46-2"><a href="#cb46-2"></a></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">mean</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Warning: argument is not numeric or logical: returning NA</span></p>
+</section>
+<section id="write-functions-with-error-handling-2" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Let’s compare to our function from earlier:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  mean_sum    <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb47-3"><a href="#cb47-3"></a>  mean_n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb47-4"><a href="#cb47-4"></a>  mean_output <span class="ot">&lt;-</span> mean_sum<span class="sc">/</span>mean_n</span>
+<span id="cb47-5"><a href="#cb47-5"></a>  </span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">return</span>(mean_output)}</span>
+<span id="cb47-7"><a href="#cb47-7"></a></span>
+<span id="cb47-8"><a href="#cb47-8"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="st">"hello"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9"></a></span>
+<span id="cb47-10"><a href="#cb47-10"></a><span class="fu">mean_function</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in sum(x) : invalid ‘type’ (character) of argument</span></p>
+</section>
+<section id="write-functions-with-error-handling-3" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Let’s write an error message:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb48-2"><a href="#cb48-2"></a>  </span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.numeric</span>(x)){</span>
+<span id="cb48-4"><a href="#cb48-4"></a>    <span class="fu">stop</span>(<span class="st">"mean_function must take an array of numbers"</span>)}</span>
+<span id="cb48-5"><a href="#cb48-5"></a>  </span>
+<span id="cb48-6"><a href="#cb48-6"></a>  mean_sum    <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb48-7"><a href="#cb48-7"></a>  mean_n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb48-8"><a href="#cb48-8"></a>  mean_output <span class="ot">&lt;-</span> mean_sum<span class="sc">/</span>mean_n</span>
+<span id="cb48-9"><a href="#cb48-9"></a>  </span>
+<span id="cb48-10"><a href="#cb48-10"></a>  <span class="fu">return</span>(mean_output)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-functions-with-error-handling-4" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+</section>
+<section id="write-functions-with-error-handling-5" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>test_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb49-2"><a href="#cb49-2"></a></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="fu">mean_function</span>(test_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="font-size: 60%"><code>[1] 2</code></span></p>
+</section>
+<section id="write-functions-with-error-handling-6" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>test_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a></span>
+<span id="cb50-3"><a href="#cb50-3"></a><span class="fu">mean_function</span>(test_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="font-size: 60%"><code>[1] 2</code></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">"hello"</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a></span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="fu">mean_function</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in mean_function(test_chr) : mean_function must take an array of numbers</span></p>
+</section>
+<section id="write-functions-with-error-handling-7" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Writing error messages forces students to think about functions as a series of steps each with its own requirements</li>
+<li>Demystify why error messsages are there and helps open up the way we think about functions</li>
+</ul>
+</section>
+<section id="takeaway" class="slide level2">
+<h2>Takeaway</h2>
+<div>
+<ul>
+<li class="fragment">Errors will be a part of a student’s coding journey, so we need to think about how we help students make the most of them</li>
+<li class="fragment"><em>Reflection:</em> What is one way you could incorporate errors in your teaching?</li>
+</ul>
+</div>
+</section></section>
 <section>
 <section id="psyteachr" class="title-slide slide level1 center">
 <h1>PsyTeachR</h1>
