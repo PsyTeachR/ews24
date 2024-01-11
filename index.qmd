@@ -317,7 +317,7 @@ $$\sigma^2 = \frac{\sum(x - \bar{x})^2}{n-1}$$
 ::: fragment
 A vector of numeric values (`x`)
 :::
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -343,7 +343,7 @@ $$
 
 1. Calculate the mean of `x` using our `mean_function()`
 
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -371,7 +371,7 @@ $$
 
     1.  subtract the mean from each value of x 
 
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -400,7 +400,7 @@ $$
     1.  subtract the mean from each value of x 
     2.  square each of the resulting values
     
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -430,7 +430,7 @@ $$
     2.  square each of the resulting values
     3.  sum all of the squared values together
     
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -456,7 +456,7 @@ $$
 
 3. Calculate the bottom part (denominator) of the formula
 
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -483,7 +483,7 @@ $$
 3. Calculate the bottom part (denominator) of the formula
 4. Divide the numerator by the denominator
 
-::: {.absolute top="400" left="0" width=700 height="300"}
+::: {.absolute top="380" left="0" width=700 height="300"}
 ```{r}
 var_function <- function(x){
   
@@ -511,7 +511,7 @@ $$
 
 Return the resulting value from Step 4 in the process
 
-::: {.absolute top="400" left="0" width="700" height="300"}
+::: {.absolute top="380" left="0" width="700" height="300"}
 ```{r, eval=TRUE}
 var_function <- function(x){
   

@@ -671,8 +671,8 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  1.3293398 -0.1874176 -0.9455704  0.8388746  2.1995362 -0.8723718
- [7] -0.1723302 -0.4131464 -0.4850704  0.5219714</code></pre>
+<pre><code> [1] -1.58839910  2.09802667 -1.02341586 -1.46741930  0.60332408  0.90148486
+ [7] -0.06074779  2.02160953  0.54964865 -1.73502848</code></pre>
 </div>
 </div>
 </div>
@@ -690,7 +690,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1813815</code></pre>
+<pre><code>[1] 0.02990833</code></pre>
 </div>
 </div>
 </div>
@@ -699,7 +699,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1813815</code></pre>
+<pre><code>[1] 0.02990833</code></pre>
 </div>
 </div>
 </div>
@@ -739,7 +739,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="fragment">
 <p>A vector of numeric values (<code>x</code>)</p>
 </div>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a>  </span>
@@ -765,7 +765,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <ol type="1">
 <li>Calculate the mean of <code>x</code> using our <code>mean_function()</code></li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  </span>
@@ -794,7 +794,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li>subtract the mean from each value of x</li>
 </ol></li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  </span>
@@ -824,7 +824,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li>square each of the resulting values</li>
 </ol></li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  </span>
@@ -855,7 +855,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li>sum all of the squared values together</li>
 </ol></li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a href="#cb21-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb21-2" class="hljs-ln-code"><a href="#cb21-2"></a>  </span>
@@ -881,7 +881,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <ol start="3" type="1">
 <li>Calculate the bottom part (denominator) of the formula</li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  </span>
@@ -908,7 +908,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li>Calculate the bottom part (denominator) of the formula</li>
 <li>Divide the numerator by the denominator</li>
 </ol>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  </span>
@@ -934,7 +934,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <section id="variance-function-output" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Variance Function: Output</h2>
 <p>Return the resulting value from Step 4 in the process</p>
-<div class="absolute" style="top: 400px; left: 0px; width: 700px; height: 300px; ">
+<div class="absolute" style="top: 380px; left: 0px; width: 700px; height: 300px; ">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  </span>
@@ -965,7 +965,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.042024</code></pre>
+<pre><code>[1] 2.077354</code></pre>
 </div>
 </div>
 </div>
@@ -974,7 +974,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.042024</code></pre>
+<pre><code>[1] 2.077354</code></pre>
 </div>
 </div>
 </div>
@@ -1199,8 +1199,8 @@ SE = \color{red}{\frac
 <pre><code># A tibble: 2 × 2
   Group ReactionT
   &lt;chr&gt;     &lt;dbl&gt;
-1 G1         338.
-2 G1         298.</code></pre>
+1 G1         560.
+2 G1         330.</code></pre>
 </div>
 </div>
 </section>
@@ -1293,13 +1293,13 @@ SE = \color{red}{\frac
     Welch Two Sample t-test
 
 data:  ReactionT by Group
-t = -1.7074, df = 14.324, p-value = 0.1093
+t = -0.31153, df = 16.336, p-value = 0.7593
 alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
 95 percent confidence interval:
- -240.36909   27.03854
+ -219.4492  163.1324
 sample estimates:
 mean in group G1 mean in group G2 
-        444.5159         551.1812 </code></pre>
+        527.7605         555.9189 </code></pre>
 </div>
 </div>
 </section>
