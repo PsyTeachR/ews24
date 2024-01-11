@@ -35,13 +35,20 @@ knitr::opts_chunk$set(error = TRUE,
 ## Why Demystification?
 
 ::: {.incremental}
--   Programming as a beginner is mysterious and scary
--   Things almost seem to work by magic
--   How can we fix something magical when it breaks??
+- Programming as a beginner is mysterious and scary
+- Things almost seem to work by magic
 :::
 
-::: {.fragment .absolute left=250 width=500 height=300}
-![](images/fantasia.jpg)
+::: {.fragment .absolute left=50 top=350}
+![](images/mops3.jpg){width=400 height=300}
+:::
+
+::: incremental
+- **How can we fix something magical when it breaks??**
+:::
+
+::: {.fragment .absolute right=50 top=350}
+![](images/fantasia.jpg){width=400 height=300}
 :::
 
 ## Why Demystification?
@@ -52,8 +59,8 @@ knitr::opts_chunk$set(error = TRUE,
 -   What if we can find a common solution?
 :::
 
-::: {.fragment .absolute left=250 width=700 height=400}
-![](images/oneplusone.png)
+::: {.fragment .absolute right=180}
+![](images/oneplusone.png){width=900 height=350}
 :::
 
 ## The Goal
@@ -64,7 +71,7 @@ knitr::opts_chunk$set(error = TRUE,
 -   Instill a sense of confidence and independence
 :::
 
-::: {.fragment .absolute left=250 width=500 height=300}
+::: {.fragment .absolute left=250}
 ![](images/fantasia2.jpg)
 :::
 

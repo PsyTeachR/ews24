@@ -445,11 +445,18 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <ul>
 <li class="fragment">Programming as a beginner is mysterious and scary</li>
 <li class="fragment">Things almost seem to work by magic</li>
-<li class="fragment">How can we fix something magical when it breaks??</li>
 </ul>
 </div>
-<div class="fragment absolute" style="left: 250px; width: 500px; height: 300px; ">
-<p><img data-src="images/fantasia.jpg"></p>
+<div class="fragment absolute" style="top: 350px; left: 50px; ">
+<p><img data-src="images/mops3.jpg" width="400" height="300"></p>
+</div>
+<div>
+<ul>
+<li class="fragment"><strong>How can we fix something magical when it breaks??</strong></li>
+</ul>
+</div>
+<div class="fragment absolute" style="top: 350px; right: 50px; ">
+<p><img data-src="images/fantasia.jpg" width="400" height="300"></p>
 </div>
 </section>
 <section id="why-demystification-1" class="slide level2">
@@ -461,8 +468,8 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li class="fragment">What if we can find a common solution?</li>
 </ul>
 </div>
-<div class="fragment absolute" style="left: 250px; width: 700px; height: 400px; ">
-<p><img data-src="images/oneplusone.png"></p>
+<div class="fragment absolute" style="right: 180px; ">
+<p><img data-src="images/oneplusone.png" width="900" height="350"></p>
 </div>
 </section>
 <section id="the-goal" class="slide level2">
@@ -474,7 +481,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <li class="fragment">Instill a sense of confidence and independence</li>
 </ul>
 </div>
-<div class="fragment absolute" style="left: 250px; width: 500px; height: 300px; ">
+<div class="fragment absolute" style="left: 250px; ">
 <p><img data-src="images/fantasia2.jpg"></p>
 </div>
 </section>
@@ -671,8 +678,8 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] -1.58839910  2.09802667 -1.02341586 -1.46741930  0.60332408  0.90148486
- [7] -0.06074779  2.02160953  0.54964865 -1.73502848</code></pre>
+<pre><code> [1]  0.95680529 -0.57247150 -0.01188373  0.48845872 -1.23185295  1.29030315
+ [7] -0.22889286 -1.20382645 -1.72008608  1.23204507</code></pre>
 </div>
 </div>
 </div>
@@ -690,7 +697,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02990833</code></pre>
+<pre><code>[1] -0.1001401</code></pre>
 </div>
 </div>
 </div>
@@ -699,7 +706,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02990833</code></pre>
+<pre><code>[1] -0.1001401</code></pre>
 </div>
 </div>
 </div>
@@ -965,7 +972,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.077354</code></pre>
+<pre><code>[1] 1.171358</code></pre>
 </div>
 </div>
 </div>
@@ -974,7 +981,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.077354</code></pre>
+<pre><code>[1] 1.171358</code></pre>
 </div>
 </div>
 </div>
@@ -1199,8 +1206,8 @@ SE = \color{red}{\frac
 <pre><code># A tibble: 2 × 2
   Group ReactionT
   &lt;chr&gt;     &lt;dbl&gt;
-1 G1         560.
-2 G1         330.</code></pre>
+1 G1         400.
+2 G1         236.</code></pre>
 </div>
 </div>
 </section>
@@ -1293,13 +1300,13 @@ SE = \color{red}{\frac
     Welch Two Sample t-test
 
 data:  ReactionT by Group
-t = -0.31153, df = 16.336, p-value = 0.7593
+t = -0.72214, df = 17.979, p-value = 0.4795
 alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
 95 percent confidence interval:
- -219.4492  163.1324
+ -174.50794   85.23556
 sample estimates:
 mean in group G1 mean in group G2 
-        527.7605         555.9189 </code></pre>
+        419.6418         464.2779 </code></pre>
 </div>
 </div>
 </section>
