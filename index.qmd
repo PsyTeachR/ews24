@@ -1056,6 +1056,12 @@ mean_function(test_chr)
 
 ![](images/psyteachr_logo.png)
 
+## Embedding Data Skills in Research Methods Education: Preparing Students for Reproducible Research
+
+Phil McAleer, Niamh Stack, Heather Cleland Woods, Lisa DeBruine, Helena Paterson, Emily Nordmann, Carolina Kuepper-Tetzel, Dale Barr
+
+[10.31234/osf.io/hq68s](https://doi.org/10.31234/osf.io/hq68s)
+
 ## Resources
 
 ![[psyteachr.github.io](https://psyteachr.github.io/)](images/resources.png)
@@ -1102,6 +1108,9 @@ mean_function(test_chr)
 ![[glossary](https://debruine.github.io/glossary/)](images/hex/glossary-pkg.png)
 :::
 
+## Quarto Books
+
+![[booktem](https://debruine.github.io/booktem/)](images/hex/booktem.png)
 
 # Thank You!
 
