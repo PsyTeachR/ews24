@@ -383,7 +383,7 @@ $$
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sapply(x,`-`,av)
+  numer  <- (x - av)
   
   
   
@@ -412,7 +412,7 @@ $$
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sapply(x,`-`,av)^2
+  numer  <- (x - av)^2
   
   
   
@@ -442,7 +442,7 @@ $$
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sum(sapply(x,`-`,av)^2) 
+  numer  <- sum((x - av)^2) 
   
   
   
@@ -468,7 +468,7 @@ $$
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sum(sapply(x,`-`,av)^2)
+  numer  <- sum((x - av)^2)
   denom  <- length(x) - 1
   
   
@@ -495,7 +495,7 @@ $$
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sum(sapply(x,`-`,av)^2)
+  numer  <- sum((x - av)^2)
   denom  <- length(x) - 1
   output <- numer/denom
 
@@ -523,7 +523,7 @@ Return the resulting value from Step 4 in the process
 var_function <- function(x){
   
   av     <- mean_function(x)
-  numer  <- sum(sapply(x,`-`,av)^2)
+  numer  <- sum((x - av)^2)
   denom  <- length(x) - 1
   output <- numer/denom
   

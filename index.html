@@ -678,8 +678,8 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  0.95680529 -0.57247150 -0.01188373  0.48845872 -1.23185295  1.29030315
- [7] -0.22889286 -1.20382645 -1.72008608  1.23204507</code></pre>
+<pre><code> [1]  0.68173536 -0.84543934  0.35907309  0.52184216  0.01519784  0.47908986
+ [7] -1.22160640  1.86377294  2.44386392 -0.47143977</code></pre>
 </div>
 </div>
 </div>
@@ -697,7 +697,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.1001401</code></pre>
+<pre><code>[1] 0.382609</code></pre>
 </div>
 </div>
 </div>
@@ -706,7 +706,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.1001401</code></pre>
+<pre><code>[1] 0.382609</code></pre>
 </div>
 </div>
 </div>
@@ -806,7 +806,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  </span>
 <span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)</span>
+<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  numer  <span class="ot">&lt;-</span> (x <span class="sc">-</span> av)</span>
 <span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>  </span>
 <span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>  </span>
 <span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>  </span>
@@ -836,7 +836,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  </span>
 <span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>  numer  <span class="ot">&lt;-</span> (x <span class="sc">-</span> av)<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a>  </span>
 <span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>  </span>
 <span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>  </span>
@@ -867,7 +867,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a href="#cb21-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb21-2" class="hljs-ln-code"><a href="#cb21-2"></a>  </span>
 <span id="cb21-3" class="hljs-ln-code"><a href="#cb21-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb21-4" class="hljs-ln-code"><a href="#cb21-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb21-4" class="hljs-ln-code"><a href="#cb21-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> av)<span class="sc">^</span><span class="dv">2</span>) </span>
 <span id="cb21-5" class="hljs-ln-code"><a href="#cb21-5"></a>  </span>
 <span id="cb21-6" class="hljs-ln-code"><a href="#cb21-6"></a>  </span>
 <span id="cb21-7" class="hljs-ln-code"><a href="#cb21-7"></a>  </span>
@@ -893,7 +893,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  </span>
 <span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> av)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  </span>
 <span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>  </span>
@@ -920,7 +920,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  </span>
 <span id="cb23-3" class="hljs-ln-code"><a href="#cb23-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> av)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb23-5" class="hljs-ln-code"><a href="#cb23-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb23-6" class="hljs-ln-code"><a href="#cb23-6"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
 <span id="cb23-7" class="hljs-ln-code"><a href="#cb23-7"></a></span>
@@ -946,7 +946,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a>var_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  </span>
 <span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>  av     <span class="ot">&lt;-</span> <span class="fu">mean_function</span>(x)</span>
-<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(x,<span class="st">`</span><span class="at">-</span><span class="st">`</span>,av)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>  numer  <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> av)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a>  denom  <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a>  output <span class="ot">&lt;-</span> numer<span class="sc">/</span>denom</span>
 <span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a>  </span>
@@ -972,7 +972,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.171358</code></pre>
+<pre><code>[1] 1.278594</code></pre>
 </div>
 </div>
 </div>
@@ -981,7 +981,7 @@ Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.171358</code></pre>
+<pre><code>[1] 1.278594</code></pre>
 </div>
 </div>
 </div>
@@ -1206,8 +1206,8 @@ SE = \color{red}{\frac
 <pre><code># A tibble: 2 × 2
   Group ReactionT
   &lt;chr&gt;     &lt;dbl&gt;
-1 G1         400.
-2 G1         236.</code></pre>
+1 G1         487.
+2 G1         517.</code></pre>
 </div>
 </div>
 </section>
@@ -1300,13 +1300,13 @@ SE = \color{red}{\frac
     Welch Two Sample t-test
 
 data:  ReactionT by Group
-t = -0.72214, df = 17.979, p-value = 0.4795
+t = -0.7605, df = 17.04, p-value = 0.4573
 alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
 95 percent confidence interval:
- -174.50794   85.23556
+ -191.82909   90.16376
 sample estimates:
 mean in group G1 mean in group G2 
-        419.6418         464.2779 </code></pre>
+        478.9221         529.7548 </code></pre>
 </div>
 </div>
 </section>
